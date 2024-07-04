@@ -1,9 +1,11 @@
 package main;
 
+import services.TasksServices;
+
 import java.util.Scanner;
 
 public class HMI {
-    private static final Scanner SCANNER_INPUT = new Scanner(System.in);
+    public static final Scanner SCANNER_INPUT = new Scanner(System.in);
 
     public static void start() {
         String actions;
@@ -25,4 +27,6 @@ public class HMI {
             }
         } while (!actions.equalsIgnoreCase("exit"));
     }
+
+
 }

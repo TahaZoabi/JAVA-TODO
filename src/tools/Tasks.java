@@ -1,6 +1,6 @@
 package tools;
 
-public class Tasks extends ToDo {
+public class Tasks {
     private String toDo;
     private String description;
     private boolean isCompleted;
@@ -30,7 +30,7 @@ public class Tasks extends ToDo {
         this.description = description;
     }
 
-    public boolean isCompleted() {
+    public boolean getIsCompleted() {
         return isCompleted;
     }
 

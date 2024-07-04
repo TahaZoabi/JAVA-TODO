@@ -32,7 +32,5 @@ public class ToDo {
         return toDoTasks;
     }
 
-    public void setToDoTasks(ArrayList<Tasks> toDoTasks) {
-        this.toDoTasks = toDoTasks;
-    }
+
 }
