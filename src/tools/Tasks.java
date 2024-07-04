@@ -3,16 +3,7 @@ package tools;
 public class Tasks {
     private String toDo;
     private String description;
-    private boolean isCompleted;
-
-    public Tasks(String toDo, String description, boolean isCompleted) {
-        this.toDo = toDo;
-        this.description = description;
-        this.isCompleted = isCompleted;
-    }
-
-    public Tasks() {
-    }
+    private boolean completed;
 
     public String getToDo() {
         return toDo;
@@ -30,12 +21,11 @@ public class Tasks {
         this.description = description;
     }
 
-    public boolean getIsCompleted() {
-        return isCompleted;
+    public boolean isCompleted() {
+        return completed;
     }
 
     public void setCompleted(boolean completed) {
-        isCompleted = completed;
+        this.completed = completed;
     }
 }
-

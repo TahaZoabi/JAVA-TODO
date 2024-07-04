@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class ToDo {
     private String name;
 
-    private ArrayList<Tasks> toDoTasks;
+    private static ArrayList<Tasks> toDoTasks;
 
     public ToDo() {
         initObject();
     }
 
     private void initObject() {
-        this.toDoTasks = new ArrayList<Tasks>();
+        this.toDoTasks = new ArrayList<>();
     }
 
     public ToDo(String name) {
@@ -28,7 +28,7 @@ public class ToDo {
         this.name = name;
     }
 
-    public ArrayList<Tasks> getToDoTasks() {
+    public static ArrayList<Tasks> getToDoTasks() {
         return toDoTasks;
     }
 
