@@ -41,14 +41,21 @@ public class TasksServices {
         }
     }
 
-    public static int getTasksIndex() {
+    public static Tasks getDeleteTask() {
         System.out.println("What Task you want to remove?");
-        return Tasks.getToDoTasks().indexOf(SCANNER_INPUT.next().toLowerCase());
+        String taskName = SCANNER_INPUT.next().toLowerCase();
+
+        for (Tasks task : Tasks.getToDoTasks()) {
+            if (task.getToDo().equals(taskName)) {
+                return task;
+            }
+        }
+        return null;
     }
 
     public static void deleteTask() {
-        int index = getTasksIndex();
-        Tasks.getToDoTasks().remove(index + 1);
+        Tasks deleteTaskObj = getDeleteTask();
+        Tasks.getToDoTasks().remove(deleteTaskObj);
 
     }
 }
