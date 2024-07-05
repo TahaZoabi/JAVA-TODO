@@ -20,10 +20,10 @@ public class HMI {
 
             switch (actions.toLowerCase()) {
                 case "add":
-                    tasksServices.addTaskInfo();
+                    TasksServices.addTaskInfo();
                     break;
                 case "view":
-                    //view task
+                    TasksServices.viewTasks();
                     break;
                 case "remove":
                     // delete task
@@ -31,18 +31,8 @@ public class HMI {
             }
         } while (!actions.equalsIgnoreCase("exit"));
 
-        viewTasks();
+
     }
 
-    private static void viewTasks() {
-        System.out.println("Tasks in ToDo list:");
-        System.out.println("---------------------");
-        for (Tasks task : Tasks.getToDoTasks()) {
-            System.out.println("ToDo: " + task.getToDo());
-            System.out.println("Description: " + task.getDescription());
-            System.out.println("Completed: " + task.isCompleted());
-            System.out.println("---------------------");
-        }
-    }
 
 }
