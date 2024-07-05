@@ -18,8 +18,8 @@ public class TasksServices {
         String description = SCANNER_INPUT.nextLine();
 
         Tasks newTask = new Tasks();
-        newTask.setToDo(todo);
-        newTask.setDescription(description);
+        newTask.setToDo(todo.toLowerCase());
+        newTask.setDescription(description.toLowerCase());
         newTask.setCompleted(false);
 
         addTask(newTask);
@@ -36,8 +36,19 @@ public class TasksServices {
         for (Tasks task : Tasks.getToDoTasks()) {
             System.out.println("ToDo: " + task.getToDo());
             System.out.println("Description: " + task.getDescription());
-            System.out.println("Completed: " + task.isCompleted());
+            System.out.println("Completed: " + task.getIsCompleted());
             System.out.println("---------------------");
         }
+    }
+
+    public static int getTasksIndex() {
+        System.out.println("What Task you want to remove?");
+        return Tasks.getToDoTasks().indexOf(SCANNER_INPUT.next().toLowerCase());
+    }
+
+    public static void deleteTask() {
+        int index = getTasksIndex();
+        Tasks.getToDoTasks().remove(index + 1);
+
     }
 }

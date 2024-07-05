@@ -26,7 +26,7 @@ public class HMI {
                     TasksServices.viewTasks();
                     break;
                 case "remove":
-                    // delete task
+                    TasksServices.deleteTask();
                     break;
             }
         } while (!actions.equalsIgnoreCase("exit"));
