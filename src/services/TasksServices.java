@@ -1,17 +1,13 @@
 package services;
 
 import tools.Tasks;
-import tools.ToDo;
 
 
 import static main.HMI.SCANNER_INPUT;
 
 public class TasksServices {
 
-    private final ToDo myToDo;
-
-    public TasksServices(ToDo myToDo) {
-        this.myToDo = myToDo;
+    public TasksServices(Tasks myTasks) {
     }
 
     public void addTaskInfo() {
@@ -29,7 +25,7 @@ public class TasksServices {
     }
 
     public void addTask(Tasks task) {
-        myToDo.getToDoTasks().add(task);
+        Tasks.getToDoTasks().add(task);
         System.out.println("Task added successfully.");
     }
 }

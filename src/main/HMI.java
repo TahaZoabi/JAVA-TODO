@@ -2,7 +2,6 @@ package main;
 
 import services.TasksServices;
 import tools.Tasks;
-import tools.ToDo;
 
 import java.util.Scanner;
 
@@ -10,8 +9,8 @@ public class HMI {
     public static final Scanner SCANNER_INPUT = new Scanner(System.in);
 
     public static void start() {
-        ToDo myToDo = new ToDo("My Tasks");
-        TasksServices tasksServices = new TasksServices(myToDo);
+        Tasks myTask = new Tasks();
+        TasksServices tasksServices = new TasksServices(myTask);
 
         String actions;
 
@@ -37,8 +36,8 @@ public class HMI {
 
     private static void viewTasks() {
         System.out.println("Tasks in ToDo list:");
-
-        for (Tasks task : ToDo.getToDoTasks()) {
+        System.out.println("---------------------");
+        for (Tasks task : Tasks.getToDoTasks()) {
             System.out.println("ToDo: " + task.getToDo());
             System.out.println("Description: " + task.getDescription());
             System.out.println("Completed: " + task.isCompleted());

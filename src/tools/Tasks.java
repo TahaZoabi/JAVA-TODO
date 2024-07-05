@@ -1,9 +1,13 @@
 package tools;
 
+import java.util.ArrayList;
+
 public class Tasks {
     private String toDo;
     private String description;
     private boolean completed;
+
+    private static final ArrayList<Tasks> TO_DO_TASKS = new ArrayList<>();
 
     public String getToDo() {
         return toDo;
@@ -27,5 +31,9 @@ public class Tasks {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
+    }
+
+    public static ArrayList<Tasks> getToDoTasks() {
+        return TO_DO_TASKS;
     }
 }
