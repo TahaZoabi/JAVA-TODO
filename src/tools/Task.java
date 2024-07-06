@@ -2,12 +2,12 @@ package tools;
 
 import java.util.ArrayList;
 
-public class Tasks {
+public class Task {
     private String toDo;
     private String description;
     private boolean completed;
 
-    private static final ArrayList<Tasks> TO_DO_TASKS = new ArrayList<>();
+    private static final ArrayList<Task> TO_DO_TASKS = new ArrayList<>();
 
     public String getToDo() {
         return toDo;
@@ -33,7 +33,7 @@ public class Tasks {
         this.completed = completed;
     }
 
-    public static ArrayList<Tasks> getToDoTasks() {
+    public static ArrayList<Task> getToDoTasks() {
         return TO_DO_TASKS;
     }
 }

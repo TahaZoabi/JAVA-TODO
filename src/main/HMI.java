@@ -1,7 +1,7 @@
 package main;
 
-import services.TasksServices;
-import tools.Tasks;
+import services.TaskServices;
+import tools.Task;
 
 import java.util.Scanner;
 
@@ -9,8 +9,8 @@ public class HMI {
     public static final Scanner SCANNER_INPUT = new Scanner(System.in);
 
     public static void start() {
-        Tasks myTask = new Tasks();
-        TasksServices tasksServices = new TasksServices(myTask);
+        Task myTask = new Task();
+        TaskServices taskServices = new TaskServices(myTask);
 
         String actions;
 
@@ -20,13 +20,13 @@ public class HMI {
 
             switch (actions.toLowerCase()) {
                 case "add":
-                    TasksServices.addTaskInfo();
+                    TaskServices.addTaskInfo();
                     break;
                 case "view":
-                    TasksServices.viewTasks();
+                    TaskServices.viewTasks();
                     break;
                 case "remove":
-                    TasksServices.deleteTask();
+                    TaskServices.deleteTask();
                     break;
             }
         } while (!actions.equalsIgnoreCase("exit"));
