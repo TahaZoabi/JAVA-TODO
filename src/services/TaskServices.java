@@ -9,6 +9,12 @@ import static main.HMI.SCANNER_INPUT;
 
 public class TaskServices {
 
+    private static final ArrayList<Task> TO_DO_TASKS = new ArrayList<>();
+
+    public static ArrayList<Task> getToDoTasks() {
+        return TO_DO_TASKS;
+    }
+
     public TaskServices(Task myTask) {
     }
 
@@ -28,14 +34,14 @@ public class TaskServices {
     }
 
     public static void addTask(Task task) {
-        Task.getToDoTasks().add(task);
+        TaskServices.getToDoTasks().add(task);
         System.out.println("Task added successfully.");
     }
 
     public static void viewTasks() {
         System.out.println("Tasks in ToDo list:");
         System.out.println("---------------------");
-        ArrayList<Task> tasks = Task.getToDoTasks();
+        ArrayList<Task> tasks = TaskServices.getToDoTasks();
         if (tasks.isEmpty()) {
             System.out.println("No tasks found.");
         }
@@ -56,7 +62,7 @@ public class TaskServices {
         System.out.println("Enter the Task Number to remove:");
         int taskNumber = SCANNER_INPUT.nextInt();
 
-        ArrayList<Task> toDoTasks = Task.getToDoTasks();
+        ArrayList<Task> toDoTasks = TaskServices.getToDoTasks();
 
         if (taskNumber > 0 && taskNumber <= toDoTasks.size()) {
             toDoTasks.remove(taskNumber - 1);
