@@ -1,7 +1,7 @@
 package main;
 
 import services.TaskServices;
-import tools.Task;
+
 
 import java.util.Scanner;
 
@@ -9,29 +9,35 @@ public class HMI {
     public static final Scanner SCANNER_INPUT = new Scanner(System.in);
 
     public static void start() {
-        Task myTask = new Task();
-        TaskServices taskServices = new TaskServices(myTask);
 
-        String actions;
+        int action;
 
-        do {
-            System.out.println("Would you like to add, view or remove a task?");
-            actions = SCANNER_INPUT.next();
+        try {
+            do {
+                TaskServices.printActions();
+                action = TaskServices.readIntInput();
 
-            switch (actions.toLowerCase()) {
-                case "add":
-                    TaskServices.addTaskInfo();
-                    break;
-                case "view":
-                    TaskServices.viewTasks();
-                    break;
-                case "remove":
-                    TaskServices.deleteTask();
-                    break;
-            }
-        } while (!actions.equalsIgnoreCase("exit"));
+                switch (action) {
+                    case 1:
+                        TaskServices.addTaskInfo();
+                        break;
+                    case 2:
+                        TaskServices.viewTasks();
+                        break;
+                    case 3:
+                        // complete a task
+                        break;
+                    case 4:
+                        TaskServices.deleteTask();
+                        break;
+                }
+            } while (action != 5);
 
-
+        } catch (Exception e) {
+            System.out.println("Error occurred: " + e.getMessage());
+        } finally {
+            SCANNER_INPUT.close();
+        }
     }
 
 

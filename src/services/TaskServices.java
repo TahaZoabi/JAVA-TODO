@@ -67,6 +67,24 @@ public class TaskServices {
         }
     }
 
+    public static void printActions() {
+        System.out.println("How can I help you today? Please choose the action number:\n" +
+                "1) Add a Task\n" +
+                "2) View All Tasks\n" +
+                "3) Complete a Task\n" +
+                "4) Delete a Task\n" +
+                "5) Exit");
+    }
+
+    // Method to safely read integer input with error handling
+    public static int readIntInput() {
+        while (!SCANNER_INPUT.hasNextInt()) {
+            System.out.println("Invalid input. Please enter a number.");
+            SCANNER_INPUT.next();
+        }
+        return SCANNER_INPUT.nextInt();
+    }
+
 }
 
 
