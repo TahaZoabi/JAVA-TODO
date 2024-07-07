@@ -20,10 +20,24 @@ public class TaskServices {
 
     public static void addTaskInfo() {
         System.out.println("Enter Your Task!");
-        String todo = SCANNER_INPUT.next();
         SCANNER_INPUT.nextLine();
+
+        String todo;
+        do {
+            todo = SCANNER_INPUT.nextLine().trim();
+            if (todo.isEmpty()) {
+                System.out.println("Task cannot be empty. Please enter your task:");
+            }
+        } while (todo.isEmpty());
+
         System.out.println("Enter Task Description:");
-        String description = SCANNER_INPUT.nextLine();
+        String description;
+        do {
+            description = SCANNER_INPUT.nextLine().trim();
+            if (description.isEmpty()) {
+                System.out.println("Description cannot be empty. Please enter task description:");
+            }
+        } while (description.isEmpty());
 
         Task newTask = new Task();
         newTask.setToDo(todo.toLowerCase());
@@ -33,14 +47,15 @@ public class TaskServices {
         addTask(newTask);
     }
 
+
     public static void addTask(Task task) {
         TaskServices.getToDoTasks().add(task);
         System.out.println("Task added successfully.");
     }
 
     public static void viewTasks() {
-        System.out.println("Tasks in ToDo list:");
-        System.out.println("---------------------");
+        System.out.println("Tasks in ToDo list:\n" +
+                "---------------------");
         ArrayList<Task> tasks = TaskServices.getToDoTasks();
         if (tasks.isEmpty()) {
             System.out.println("No tasks found.");
@@ -48,11 +63,12 @@ public class TaskServices {
         else {
             int counter = 1;
             for (Task task : tasks) {
-                System.out.println("Task Number " + counter);
-                System.out.println("ToDo: " + task.getToDo());
-                System.out.println("Description: " + task.getDescription());
-                System.out.println("Completed: " + task.isCompleted());
-                System.out.println("---------------------");
+                System.out.println("Task Number " + counter +
+                        "\nToDo: " + task.getToDo() +
+                        "\nDescription: " + task.getDescription() +
+                        "\nCompleted: " + task.isCompleted() +
+                        "\n---------------------");
+
                 counter++;
             }
         }
@@ -91,6 +107,22 @@ public class TaskServices {
         return SCANNER_INPUT.nextInt();
     }
 
+    public static void completeTask() {
+        System.out.println("Enter the Task Number to complete:");
+        int taskNumber = SCANNER_INPUT.nextInt();
+        SCANNER_INPUT.nextLine();
+
+        ArrayList<Task> toDoTasks = TaskServices.getToDoTasks();
+
+        if (taskNumber > 0 && taskNumber <= toDoTasks.size()) {
+            Task taskToComplete = toDoTasks.get(taskNumber - 1);
+            taskToComplete.setCompleted(true);
+            System.out.println("Task number " + taskNumber + " is now completed.");
+        }
+        else {
+            System.out.println("Invalid task number. No task completed.");
+        }
+    }
 }
 
 

@@ -25,7 +25,7 @@ public class HMI {
                         TaskServices.viewTasks();
                         break;
                     case 3:
-                        // complete a task
+                        TaskServices.completeTask();
                         break;
                     case 4:
                         TaskServices.deleteTask();
