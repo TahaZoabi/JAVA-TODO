@@ -3,6 +3,8 @@ package services;
 import tools.Task;
 
 
+import java.util.ArrayList;
+
 import static main.HMI.SCANNER_INPUT;
 
 public class TaskServices {
@@ -33,29 +35,39 @@ public class TaskServices {
     public static void viewTasks() {
         System.out.println("Tasks in ToDo list:");
         System.out.println("---------------------");
-        for (Task task : Task.getToDoTasks()) {
-            System.out.println("ToDo: " + task.getToDo());
-            System.out.println("Description: " + task.getDescription());
-            System.out.println("Completed: " + task.getIsCompleted());
-            System.out.println("---------------------");
+        ArrayList<Task> tasks = Task.getToDoTasks();
+        if (tasks.isEmpty()) {
+            System.out.println("No tasks found.");
         }
-    }
-
-    public static Task getDeleteTask() {
-        System.out.println("What Task you want to remove?");
-        String taskName = SCANNER_INPUT.next().toLowerCase();
-
-        for (Task task : Task.getToDoTasks()) {
-            if (task.getToDo().equals(taskName)) {
-                return task;
+        else {
+            int counter = 1;
+            for (Task task : tasks) {
+                System.out.println("Task Number " + counter);
+                System.out.println("ToDo: " + task.getToDo());
+                System.out.println("Description: " + task.getDescription());
+                System.out.println("Completed: " + task.isCompleted());
+                System.out.println("---------------------");
+                counter++;
             }
         }
-        return null;
     }
 
     public static void deleteTask() {
-        Task deleteTaskObj = getDeleteTask();
-        Task.getToDoTasks().remove(deleteTaskObj);
+        System.out.println("Enter the Task Number to remove:");
+        int taskNumber = SCANNER_INPUT.nextInt();
 
+        ArrayList<Task> toDoTasks = Task.getToDoTasks();
+
+        if (taskNumber > 0 && taskNumber <= toDoTasks.size()) {
+            toDoTasks.remove(taskNumber - 1);
+            System.out.println("Task number " + taskNumber + " removed successfully.");
+        }
+        else {
+            System.out.println("Invalid task number. No task removed.");
+        }
     }
+
 }
+
+
+
