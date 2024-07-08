@@ -1,6 +1,6 @@
-package com.Range.ToDo.main;
+package com.range.todo.main;
 
-import com.Range.ToDo.services.TaskServices;
+import com.range.todo.services.TaskServices;
 
 
 import java.util.InputMismatchException;
@@ -35,7 +35,7 @@ public class HMI {
             } while (action != 5);
 
         } catch (InputMismatchException e) {
-            System.out.println("Unknown  Action: " + e.getMessage());
+            System.out.println("Unknown Action: " + e.getMessage());
         }
     }
 

@@ -1,4 +1,4 @@
-package com.Range.ToDo.tools;
+package com.range.todo.tools;
 
 public class Task {
     private String toDo;

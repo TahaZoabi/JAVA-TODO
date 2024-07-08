@@ -1,11 +1,10 @@
-package com.Range.ToDo.services;
+package com.range.todo.services;
 
-import com.Range.ToDo.tools.Task;
-
+import com.range.todo.tools.Task;
 
 import java.util.ArrayList;
 
-import static com.Range.ToDo.main.HMI.SCANNER_INPUT;
+import static com.range.todo.main.HMI.SCANNER_INPUT;
 
 public class TaskServices {
 
@@ -64,7 +63,7 @@ public class TaskServices {
             int counter = 1;
             for (Task task : tasks) {
                 System.out.println("Task Number " + counter +
-                        "\nToDo: " + task.getToDo() +
+                        "\nTo-Do: " + task.getToDo() +
                         "\nDescription: " + task.getDescription() +
                         "\nCompleted: " + task.isCompleted() +
                         "\n---------------------");
