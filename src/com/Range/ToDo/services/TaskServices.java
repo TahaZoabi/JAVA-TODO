@@ -1,11 +1,11 @@
-package services;
+package com.Range.ToDo.services;
 
-import tools.Task;
+import com.Range.ToDo.tools.Task;
 
 
 import java.util.ArrayList;
 
-import static main.HMI.SCANNER_INPUT;
+import static com.Range.ToDo.main.HMI.SCANNER_INPUT;
 
 public class TaskServices {
 
