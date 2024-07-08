@@ -11,10 +11,10 @@ public class HMI {
 
     public static void start() {
 
-        int action;
+        int action = 0;
 
-        try {
-            do {
+        do {
+            try {
                 TaskServices.printActions();
                 action = TaskServices.readIntInput();
 
@@ -32,11 +32,11 @@ public class HMI {
                         TaskServices.deleteTask();
                         break;
                 }
-            } while (action != 5);
 
-        } catch (InputMismatchException e) {
-            System.out.println("Unknown Action: " + e.getMessage());
-        }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter task number.");
+            }
+        } while (action != 5);
     }
 
 

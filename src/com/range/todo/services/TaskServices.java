@@ -100,7 +100,7 @@ public class TaskServices {
     // Method to safely read integer input with error handling
     public static int readIntInput() {
         while (!SCANNER_INPUT.hasNextInt()) {
-            System.out.println("Invalid input. Please enter a number.");
+            System.out.println("Invalid Action. Please enter a number (1-5).");
             SCANNER_INPUT.next();
         }
         return SCANNER_INPUT.nextInt();
