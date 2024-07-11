@@ -3,19 +3,17 @@ package com.range.todo.services;
 import com.range.todo.tools.Task;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
-import static com.range.todo.main.HMI.SCANNER_INPUT;
 
 public class TaskServices {
-
+    private static final Scanner SCANNER_INPUT = new Scanner(System.in);
     private static final ArrayList<Task> TO_DO_TASKS = new ArrayList<>();
 
     public static ArrayList<Task> getToDoTasks() {
         return TO_DO_TASKS;
     }
-
-    public TaskServices(Task myTask) {
-    }
+    
 
     public static void addTaskInfo() {
         System.out.println("Enter Your Task!");

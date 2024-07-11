@@ -7,7 +7,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class HMI {
-    public static final Scanner SCANNER_INPUT = new Scanner(System.in);
+
 
     public static void start() {
 
