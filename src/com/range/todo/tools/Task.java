@@ -1,25 +1,21 @@
 package com.range.todo.tools;
 
 public class Task {
-    private String toDo;
-    private String description;
+    private final String toDo;
+    private final String description;
     private boolean completed;
 
+    public Task(String toDo, String description) {
+        this.toDo = toDo;
+        this.description = description;
+    }
 
     public String getToDo() {
         return toDo;
     }
 
-    public void setToDo(String toDo) {
-        this.toDo = toDo;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public boolean isCompleted() {

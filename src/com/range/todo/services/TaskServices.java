@@ -13,7 +13,7 @@ public class TaskServices {
     public static ArrayList<Task> getToDoTasks() {
         return TO_DO_TASKS;
     }
-    
+
 
     public static void addTaskInfo() {
         System.out.println("Enter Your Task!");
@@ -36,9 +36,7 @@ public class TaskServices {
             }
         } while (description.isEmpty());
 
-        Task newTask = new Task();
-        newTask.setToDo(todo.toLowerCase());
-        newTask.setDescription(description.toLowerCase());
+        Task newTask = new Task(todo, description);
         newTask.setCompleted(false);
 
         addTask(newTask);
