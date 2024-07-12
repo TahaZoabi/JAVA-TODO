@@ -32,3 +32,32 @@ This is a simple command-line TODO list application written in Java. It allows u
 ## Technologies Used
 
 - Java
+- ArrayList for managing tasks
+- Scanner for user input
+
+## How to Run
+
+To run this application locally, ensure you have Java Development Kit (JDK) installed on your machine.
+
+1. Clone this repository:
+git clone https://github.com/your-username/todo-list-java.git
+
+2. Navigate into the project directory:
+cd todo-list-java
+
+
+3. Compile the Java files:
+javac com/range/todo/main/HMI.java com/range/todo/services/TaskServices.java com/range/todo/tools/Task.java
+
+
+4. Run the application:
+java com.range.todo.main.HMI
+
+
+5. Follow the on-screen instructions to interact with the TODO list.
+
+## Contributing
+
+Contributions are welcome! If you'd like to improve the application, please fork the repository and create a pull request with your changes.
+
+
